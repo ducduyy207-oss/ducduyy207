@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Sản Phẩm - Fashion Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>FASHION</h1>
+                    <span>STORE</span>
+                </div>
+                
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="products.html">Sản phẩm</a></li>
+                        <li><a href="#about">Về chúng tôi</a></li>
+                        <li><a href="#contact">Liên hệ</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <span class="sun">☀️</span>
+                        <span class="moon">🌙</span>
+                    </button>
+                    <button class="search-btn" aria-label="Search">🔍</button>
+                    <a href="cart.html" class="cart-btn">
+                        🛒
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Trang chủ</a>
+            <span>/</span>
+            <a href="products.html">Sản phẩm</a>
+            <span>/</span>
+            <span id="productBreadcrumb">Chi tiết</span>
+        </div>
+    </div>
+
+    <!-- Product Detail -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-detail-layout">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img id="mainImage" src="" alt="Product">
+                    </div>
+                    <div class="thumbnail-images" id="thumbnailImages">
+                        <!-- Thumbnails will be loaded by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info">
+                    <h1 id="productName">Tên sản phẩm</h1>
+                    <div class="product-rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-count">(128 đánh giá)</span>
+                    </div>
+                    
+                    <div class="product-price">
+                        <span class="current-price" id="productPrice">0đ</span>
+                        <span class="original-price" id="originalPrice">0đ</span>
+                        <span class="discount-badge" id="discountBadge">-20%</span>
+                    </div>
+
+                    <div class="product-description" id="productDescription">
+                        <p>Mô tả sản phẩm sẽ được hiển thị ở đây...</p>
+                    </div>
+
+                    <!-- Color Selection -->
+                    <div class="product-option">
+                        <h3>Màu sắc:</h3>
+                        <div class="color-options" id="colorOptions">
+                            <label class="color-choice">
+                                <input type="radio" name="color" value="black" checked>
+                                <span class="color-box" style="background: #000;"></span>
+                                <span class="color-name">Đen</span>
+                            </label>
+                            <label class="color-choice">
+                                <input type="radio" name="color" value="white">
+                                <span class="color-box" style="background: #fff; border: 1px solid #ddd;"></span>
+                                <span class="color-name">Trắng</span>
+                            </label>
+                            <label class="color-choice">
+                                <input type="radio" name="color" value="blue">
+                                <span class="color-box" style="background: #3498db;"></span>
+                                <span class="color-name">Xanh</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Size Selection -->
+                    <div class="product-option">
+                        <h3>Kích thước:</h3>
+                        <div class="size-options" id="sizeOptions">
+                            <label class="size-choice">
+                                <input type="radio" name="size" value="S">
+                                <span>S</span>
+                            </label>
+                            <label class="size-choice">
+                                <input type="radio" name="size" value="M" checked>
+                                <span>M</span>
+                            </label>
+                            <label class="size-choice">
+                                <input type="radio" name="size" value="L">
+                                <span>L</span>
+                            </label>
+                            <label class="size-choice">
+                                <input type="radio" name="size" value="XL">
+                                <span>XL</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Quantity -->
+                    <div class="product-option">
+                        <h3>Số lượng:</h3>
+                        <div class="quantity-selector">
+                            <button class="qty-btn" id="decreaseQty">-</button>
+                            <input type="number" id="quantity" value="1" min="1" max="99">
+                            <button class="qty-btn" id="increaseQty">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="product-actions">
+                        <button class="btn btn-primary btn-large" id="addToCartBtn">
+                            🛒 Thêm vào giỏ hàng
+                        </button>
+                        <button class="btn btn-secondary btn-large" id="buyNowBtn">
+                            ⚡ Mua ngay
+                        </button>
+                    </div>
+
+                    <!-- Product Features -->
+                    <div class="product-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Miễn phí vận chuyển</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Đổi trả trong 30 ngày</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Bảo hành chính hãng</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Thanh toán an toàn</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="product-tabs">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="description">Mô tả chi tiết</button>
+                    <button class="tab-btn" data-tab="specifications">Thông số</button>
+                    <button class="tab-btn" data-tab="reviews">Đánh giá (128)</button>
+                </div>
+
+                <div class="tabs-content">
+                    <div class="tab-panel active" id="description">
+                        <h3>Mô tả sản phẩm</h3>
+                        <p>Sản phẩm được thiết kế với chất liệu cao cấp, mang lại sự thoải mái và phong cách cho người mặc. Thiết kế hiện đại, phù hợp với nhiều dịp khác nhau.</p>
+                        <ul>
+                            <li>Chất liệu: Cotton cao cấp</li>
+                            <li>Kiểu dáng: Hiện đại, trẻ trung</li>
+                            <li>Dễ dàng phối đồ</li>
+                            <li>Giặt máy được</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-panel" id="specifications">
+                        <h3>Thông số kỹ thuật</h3>
+                        <table class="specs-table">
+                            <tr>
+                                <td>Chất liệu</td>
+                                <td>Cotton 100%</td>
+                            </tr>
+                            <tr>
+                                <td>Xuất xứ</td>
+                                <td>Việt Nam</td>
+                            </tr>
+                            <tr>
+                                <td>Màu sắc</td>
+                                <td>Đen, Trắng, Xanh</td>
+                            </tr>
+                            <tr>
+                                <td>Kích thước</td>
+                                <td>S, M, L, XL</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="tab-panel" id="reviews">
+                        <h3>Đánh giá từ khách hàng</h3>
+                        <div class="reviews-summary">
+                            <div class="rating-average">
+                                <span class="rating-number">4.8</span>
+                                <div class="rating-stars">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">128 đánh giá</span>
+                            </div>
+                        </div>
+                        
+                        <div class="review-item">
+                            <div class="review-header">
+                                <strong>Nguyễn Văn A</strong>
+                                <span class="review-stars">⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="review-text">Sản phẩm rất đẹp, chất lượng tốt. Giao hàng nhanh!</p>
+                            <span class="review-date">15/10/2024</span>
+                        </div>
+
+                        <div class="review-item">
+                            <div class="review-header">
+                                <strong>Trần Thị B</strong>
+                                <span class="review-stars">⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="review-text">Mặc rất thoải mái, form chuẩn. Sẽ ủng hộ shop tiếp!</p>
+                            <span class="review-date">12/10/2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="related-products">
+                <h2 class="section-title">Sản phẩm liên quan</h2>
+                <div class="products-grid" id="relatedProducts">
+                    <!-- Related products will be loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FASHION STORE</h3>
+                    <p>Thời trang cao cấp cho phong cách hiện đại</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="YouTube">📺</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Về Chúng Tôi</h4>
+                    <ul>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Tin tức</a></li>
+                        <li><a href="#">Tuyển dụng</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Hỗ Trợ</h4>
+                    <ul>
+                        <li><a href="#">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Câu hỏi thường gặp</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Liên Hệ</h4>
+                    <ul>
+                        <li>📍 123 Đường ABC, Quận 1, TP.HCM</li>
+                        <li>📞 0123 456 789</li>
+                        <li>✉️ contact@fashionstore.vn</li>
+                        <li>🕐 8:00 - 22:00 (Hàng ngày)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fashion Store. Thiết kế bởi Quyền Đức Duy</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

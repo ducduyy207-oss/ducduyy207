@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản Phẩm - Fashion Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>FASHION</h1>
+                    <span>STORE</span>
+                </div>
+                
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="products.html" class="active">Sản phẩm</a></li>
+                        <li><a href="#about">Về chúng tôi</a></li>
+                        <li><a href="#contact">Liên hệ</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <span class="sun">☀️</span>
+                        <span class="moon">🌙</span>
+                    </button>
+                    <button class="search-btn" aria-label="Search">🔍</button>
+                    <a href="cart.html" class="cart-btn">
+                        🛒
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Sản Phẩm</h1>
+            <p>Khám phá bộ sưu tập thời trang của chúng tôi</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-layout">
+                <!-- Sidebar Filters -->
+                <aside class="filters-sidebar">
+                    <div class="filter-group">
+                        <h3>Tìm kiếm</h3>
+                        <div class="search-box">
+                            <input type="text" id="searchInput" placeholder="Tìm sản phẩm...">
+                            <button type="button">🔍</button>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Danh mục</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="all" checked>
+                                <span>Tất cả</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="women">
+                                <span>Thời trang nữ</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="men">
+                                <span>Thời trang nam</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="accessories">
+                                <span>Phụ kiện</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="shoes">
+                                <span>Giày dép</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Khoảng giá</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="price" value="0-500000">
+                                <span>Dưới 500.000đ</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="price" value="500000-1000000">
+                                <span>500.000đ - 1.000.000đ</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="price" value="1000000-2000000">
+                                <span>1.000.000đ - 2.000.000đ</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="price" value="2000000-999999999">
+                                <span>Trên 2.000.000đ</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Màu sắc</h3>
+                        <div class="color-filters">
+                            <label class="color-option" title="Đen">
+                                <input type="checkbox" name="color" value="black">
+                                <span class="color-swatch" style="background: #000;"></span>
+                            </label>
+                            <label class="color-option" title="Trắng">
+                                <input type="checkbox" name="color" value="white">
+                                <span class="color-swatch" style="background: #fff; border: 1px solid #ddd;"></span>
+                            </label>
+                            <label class="color-option" title="Đỏ">
+                                <input type="checkbox" name="color" value="red">
+                                <span class="color-swatch" style="background: #e74c3c;"></span>
+                            </label>
+                            <label class="color-option" title="Xanh dương">
+                                <input type="checkbox" name="color" value="blue">
+                                <span class="color-swatch" style="background: #3498db;"></span>
+                            </label>
+                            <label class="color-option" title="Xanh lá">
+                                <input type="checkbox" name="color" value="green">
+                                <span class="color-swatch" style="background: #2ecc71;"></span>
+                            </label>
+                            <label class="color-option" title="Vàng">
+                                <input type="checkbox" name="color" value="yellow">
+                                <span class="color-swatch" style="background: #f1c40f;"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-secondary btn-block" id="resetFilters">Xóa bộ lọc</button>
+                </aside>
+
+                <!-- Products Grid -->
+                <div class="products-main">
+                    <div class="products-toolbar">
+                        <div class="products-count">
+                            Hiển thị <span id="productsCount">0</span> sản phẩm
+                        </div>
+                        <div class="products-sort">
+                            <label>Sắp xếp:</label>
+                            <select id="sortSelect">
+                                <option value="default">Mặc định</option>
+                                <option value="name-asc">Tên A-Z</option>
+                                <option value="name-desc">Tên Z-A</option>
+                                <option value="price-asc">Giá thấp đến cao</option>
+                                <option value="price-desc">Giá cao đến thấp</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Products will be loaded by JavaScript -->
+                    </div>
+
+                    <div class="no-products" id="noProducts" style="display: none;">
+                        <p>Không tìm thấy sản phẩm phù hợp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FASHION STORE</h3>
+                    <p>Thời trang cao cấp cho phong cách hiện đại</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="YouTube">📺</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Về Chúng Tôi</h4>
+                    <ul>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Tin tức</a></li>
+                        <li><a href="#">Tuyển dụng</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Hỗ Trợ</h4>
+                    <ul>
+                        <li><a href="#">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Câu hỏi thường gặp</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Liên Hệ</h4>
+                    <ul>
+                        <li>📍 123 Đường ABC, Quận 1, TP.HCM</li>
+                        <li>📞 0123 456 789</li>
+                        <li>✉️ contact@fashionstore.vn</li>
+                        <li>🕐 8:00 - 22:00 (Hàng ngày)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fashion Store. Thiết kế bởi Quyền Đức Duy</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
